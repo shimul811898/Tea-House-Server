@@ -1,5 +1,8 @@
 const dns = require('node:dns');
 dns.setDefaultResultOrder('ipv4first');
+try {
+  dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);
+} catch (e) {}
 
 const dotenv = require('dotenv');
 dotenv.config();
